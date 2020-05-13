@@ -36,7 +36,7 @@ def getItemList():
     return item_list
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 
-def work_func(item):
+def exec_rule(item):
     es = Elasticsearch(HELK_IP + ':9200')
     search_doc = item[0]
     res = es.search(index="logs-endpoint-winevent-*",body=search_doc)
@@ -60,7 +60,7 @@ def main():
     item_list = getItemList()
     start_time = time.time()
     with Pool(POOL_SIZE) as pool:
-        results = pool.map(work_func, item_list)
+        results = pool.map(exec_rule, item_list)
     end_time = time.time()
     
     # 当线程池大小为1时，用时44.5s； 当线程池大小为10时， 用时10.8s。说明线程池确实有用
