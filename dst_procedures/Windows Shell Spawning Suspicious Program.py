@@ -1,0 +1,5 @@
+{"query": {"constant_score": {"filter": {"bool": {"must": [{"bool": {"must": [{"bool": {"should": [{"wildcard": {"process_parent_path.keyword": "*\\\\mshta.exe"}}, {"wildcard": {"process_parent_path.keyword": "*\\\\powershell.exe"}}, {"wildcard": {"process_parent_path.keyword": "*\\\\rundll32.exe"}}, {"wildcard": {"process_parent_path.keyword": "*\\\\cscript.exe"}}, {"wildcard": {"process_parent_path.keyword": "*\\\\wscript.exe"}}, {"wildcard": {"process_parent_path.keyword": "*\\\\wmiprvse.exe"}}]}}, {"bool": {"should": [{"wildcard": {"process_path.keyword": "*\\\\schtasks.exe"}}, {"wildcard": {"process_path.keyword": "*\\\\nslookup.exe"}}, {"wildcard": {"process_path.keyword": "*\\\\certutil.exe"}}, {"wildcard": {"process_path.keyword": "*\\\\bitsadmin.exe"}}, {"wildcard": {"process_path.keyword": "*\\\\mshta.exe"}}]}}]}}, {"bool": {"must_not": [{"bool": {"must": [{"wildcard": {"process_current_directory.keyword": "*\\\\ccmcache\\\\*"}}]}}]}}]}}}}}
+tactic = "Execution"
+technique = "Scripting"
+procedure = "Windows Shell Spawning Suspicious Program"
+tech_code = "T1064"
