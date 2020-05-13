@@ -22,6 +22,7 @@ def getItemList():
             if id == 0:
                 search_doc = eval(line.strip())
             if re.match('tactic', line):
+                # 用eval可以去掉python字符串两端的引号
                 tactic = eval(line.split('=')[1].strip())
             elif re.match('technique', line):
                 technique = eval(line.split('=')[1].strip())
