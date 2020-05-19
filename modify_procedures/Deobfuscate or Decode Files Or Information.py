@@ -110,5 +110,5 @@ with open("dst_procedures/Deobfuscate or Decode Files Or Information.py", "w", e
 	f.write(json_str+"\n")
 	f.write('tactic = "Defense Evasion"\n')
 	f.write('technique = "Deobfuscate/Decode Files or Information"\n')
-	f.write('procedure = "Deobfuscate or Decode Files Or Information"\n')
+	f.write('procedure = "Deobfuscate/Decode Files Or Information"\n')
 	f.write('tech_code = "T1140"\n')

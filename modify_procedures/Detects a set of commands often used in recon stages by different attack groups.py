@@ -136,5 +136,5 @@ with open("dst_procedures/Detects a set of commands often used in recon stages b
 	f.write(json_str+"\n")
 	f.write('tactic = "Discovery"\n')
 	f.write('technique = "Account Discovery"\n')
-	f.write('procedure = "Detects a set of commands often used in recon stages by different attack groups"\n')
+	f.write('procedure = "Net.exe Execution"\n')
 	f.write('tech_code = "T1087"\n')

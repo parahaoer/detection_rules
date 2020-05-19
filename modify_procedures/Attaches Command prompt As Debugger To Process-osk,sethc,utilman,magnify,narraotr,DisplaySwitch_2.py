@@ -85,5 +85,5 @@ with open("dst_procedures/Attaches Command prompt As Debugger To Process-osk,set
 	f.write(json_str+"\n")
 	f.write('tactic = "Persistence"\n')
 	f.write('technique = "Accessibility Features"\n')
-	f.write('procedure = "Attaches Command prompt As Debugger To Process-osk,sethc,utilman,magnify,narraotr,DisplaySwitch_2"\n')
+	f.write('procedure = "Attaches Command prompt As Debugger To Process-osk,sethc,utilman,magnify,narraotr,DisplaySwitch"\n')
 	f.write('tech_code = "T1015"\n')

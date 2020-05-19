@@ -69,5 +69,5 @@ with open("dst_procedures/Possible Applocker Bypass Detect T1127.py", "w", encod
 	f.write(json_str+"\n")
 	f.write('tactic = "Defense Evasion"\n')
 	f.write('technique = "Trusted Developer Utilities"\n')
-	f.write('procedure = "Possible Applocker Bypass Detect T1127"\n')
+	f.write('procedure = "Possible Applocker Bypass"\n')
 	f.write('tech_code =  "T1127"\n')

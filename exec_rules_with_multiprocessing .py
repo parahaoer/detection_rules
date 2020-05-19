@@ -5,8 +5,17 @@ import json
 import re
 from multiprocessing import Pool
 import time
+import hashlib
 
 POOL_SIZE = 10
+
+def hash(search_doc, tactic, technique, procedure, tech_code):
+    hash_str = json.dumps(search_doc) + tactic + tech_code + procedure + tech_code
+    print(hash_str)
+    md5 = hashlib.md5()
+    md5.update(hash_str.encode('UTF-8'))
+    return md5.hexdigest()
+
 
 def getItemList():
     item_list = []
@@ -37,7 +46,7 @@ def getItemList():
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 
 def exec_rule(item):
-    es = Elasticsearch(HELK_IP + ':9200')
+    es = Elasticsearch(HELK_IP + ':9200', timeout=30)
     search_doc = item[0]
     res = es.search(index="logs-endpoint-winevent-*",body=search_doc)
     count = res['hits']['total']['value']
@@ -45,6 +54,8 @@ def exec_rule(item):
     technique = item[2]
     procedure = item[3]
     tech_code = item[4]
+
+    doc_id = hash(search_doc, tactic, technique, procedure, tech_code)
 
     action ={
             "Tactic": tactic,
@@ -54,7 +65,7 @@ def exec_rule(item):
             "EventCount": count,
         }
     print(count)
-    es.index(index="represent_1",body = action, id = procedure)
+    es.index(index="represent_1",body = action, id = doc_id)
 
 def main():
     item_list = getItemList()

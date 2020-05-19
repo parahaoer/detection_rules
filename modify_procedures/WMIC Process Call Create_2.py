@@ -50,5 +50,5 @@ with open("dst_procedures/WMIC Process Call Create_2.py", "w", encoding="gbk") a
 	f.write(json_str+"\n")
 	f.write('tactic = "Execution"\n')
 	f.write('technique = "Windows Remote Management"\n')
-	f.write('procedure = "WMIC Process Call Create_2"\n')
+	f.write('procedure = "WMIC Process Call Create"\n')
 	f.write('tech_code = "T1028"\n')

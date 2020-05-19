@@ -130,5 +130,5 @@ with open("dst_procedures/Regsvr32 remote COM scriptlet Execution_2.py", "w", en
 	f.write(json_str+"\n")
 	f.write('tactic = "Execution"\n')
 	f.write('technique = "Regsvr32"\n')
-	f.write('procedure = "Regsvr32 remote COM scriptlet Execution_2"\n')
+	f.write('procedure = "Regsvr32 remote COM scriptlet Execution"\n')
 	f.write('tech_code = "T1117"\n')

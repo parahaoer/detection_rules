@@ -78,5 +78,5 @@ with open("dst_procedures/Download and Execute.py", "w", encoding="gbk") as f:
 	f.write(json_str+"\n")
 	f.write('tactic = "Persistence"\n')
 	f.write('technique = "BITS Jobs"\n')
-	f.write('procedure = "Download and Execute"\n')
+	f.write('procedure = "Download & Execute"\n')
 	f.write('tech_code = "T1197"\n')

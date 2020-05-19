@@ -47,7 +47,7 @@ def work_func(procedure_path):
                 "\tf.write(json_str" + "+\"\\n\")\n" + \
                 "\tf.write("+"\'"+tactic_line.strip()+"\\n\'"+")\n" + \
                 "\tf.write("+"\'"+technique_line.strip()+"\\n\'"+")\n" + \
-                "\tf.write(\'procedure = "+"\""+procedure_name+"\"\\n\'"+")\n" + \
+                "\tf.write("+"\'"+procedure_line.strip()+"\\n\'"+")\n" + \
                 "\tf.write("+"\'"+tech_code_line.strip()+"\\n\'"+")\n"
     
 

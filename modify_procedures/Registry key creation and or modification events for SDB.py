@@ -65,5 +65,5 @@ with open("dst_procedures/Registry key creation and or modification events for S
 	f.write(json_str+"\n")
 	f.write('tactic = "Persistence"\n')
 	f.write('technique = "Application Shimming"\n')
-	f.write('procedure = "Registry key creation and or modification events for SDB"\n')
+	f.write('procedure = "Registry key creation and/or modification events for SDB"\n')
 	f.write('tech_code = "T1138"\n')
