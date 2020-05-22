@@ -1,0 +1,7 @@
+search_doc_a : {"size": 10000, "query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase": {"event_id": "800"}}, {"match_phrase": {"param3": "name=\"Command\"; value=\"del C:\\\"$\"Recycle.bin\\old.7z\""}}]}}}}}
+search_doc_b : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4103"}}, {"match_phrase": {"powershell.param.value": "del C:\\\"$\"Recycle.bin\\old.7z\""}}]}}}
+tactic : Defense Evasion
+technique : File Deletion
+tech_code : T1107
+eval_phase : Exfiltration
+eval_step : 19.D.1

@@ -1,0 +1,7 @@
+search_doc_a : {"size": 10000, "query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase": {"event_id": "800"}}, {"match_phrase": {"param3": "name=\"Command\"; value=\"recycler.exe a -t7z C:\\\"$\"Recycle.Bin\\old.7z C:\\\"$\"Recycle.Bin\\recipe.txt\""}}]}}}}}
+search_doc_b : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4103"}}, {"match_phrase": {"powershell.param.value": "recycler.exe a -t7z C:\\\"$\"Recycle.Bin\\old.7z C:\\\"$\"Recycle.Bin\\recipe.txt"}}]}}}
+tactic : Exfiltration
+technique : Data Compressed
+tech_code : T1002
+eval_phase : Exfiltration
+eval_step : 19.B.1

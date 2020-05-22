@@ -1,0 +1,8 @@
+search_doc_a : {"size": 10000, "query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase": {"event_id": "800"}}, {"match_phrase": {"param3": "name=\\\"Command\\\"; value=\\\"sc.exe `\\\\`\\\\HFDC01 qc AdobeUpdater\\\""}}]}}}}}
+search_doc_b : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4103"}}, {"match_phrase": {"powershell.param.value": "sc.exe `\\\\`\\\\HFDC01 qc AdobeUpdater"}}]}}}
+search_doc_c : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4688"}}, {"match_phrase": {"process_command_line": "*\\\\\\\\sc.exe\\\" \\\\\\\\HFDC01 qc"}}]}}}
+tactic : Discovery
+technique : System Service Discovery
+tech_code : T1007
+eval_phase : Lateral Movement
+eval_step : 16.J.1

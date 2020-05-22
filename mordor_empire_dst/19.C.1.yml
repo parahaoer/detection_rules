@@ -1,0 +1,8 @@
+search_doc_a : {"size": 10000, "query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase": {"event_id": "800"}}, {"match_phrase": {"param3": "ParameterBinding(Set-Content): name=\"Path\"; value=\"ftp.txt\""}}]}}}}}
+search_doc_b : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4103"}}, {"match_phrase": {"powershell.command.name": "Set-Content"}}]}}}
+search_doc_c : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "11"}}, {"match_phrase": {"file_name": "ftp.txt"}}]}}}
+tactic : Exfiltration
+technique : Exfiltration Over Alternative Protocol
+tech_code : T1048
+eval_phase : Exfiltration
+eval_step : 19.C.1

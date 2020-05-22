@@ -1,0 +1,6 @@
+search_doc_a : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "261"}}]}}}
+tactic : Persistence
+technique : Accessibility Features
+tech_code : T1015
+eval_phase : Execution of Persistence
+eval_step : 20.A.1

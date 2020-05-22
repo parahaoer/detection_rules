@@ -1,0 +1,7 @@
+search_doc_a : {"size": 10000, "query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase": {"event_id": "800"}}, {"match_phrase": {"param3": "name=\"Command\"; value=\"type FileSystem::\"\\\\HFDC01\\C$\\Users\\pgustavo\\AppData\\Roaming\\Adobe\\Flash Player\\autoupdate.vbs\"\""}}]}}}}}
+search_doc_b : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4103"}}, {"match_phrase": {"powershell.param.value": "type FileSystem::\"\\\\HFDC01\\C$\\Users\\pgustavo\\AppData\\Roaming\\Adobe\\Flash Player\\autoupdate.vbs\""}}]}}}
+tactic : Discovery
+technique : File and Directory Discovery
+tech_code : T1083
+eval_phase : Lateral Movement
+eval_step : 16.K.1

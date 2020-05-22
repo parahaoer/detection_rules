@@ -1,0 +1,7 @@
+search_doc_a : {"size": 10000, "query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase": {"event_id": "800"}}, {"match_phrase": {"param3": "ParameterBinding(Get-Content): name=\"Path\"; value=\"FileSystem::\\\\HFDC01\\IT\\it_tasks.txt\""}}]}}}}}
+search_doc_b : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4103"}}, {"match_phrase": {"powershell.command.name": "Get-Content"}}]}}}
+tactic : Credential Access
+technique : Credentials in Files
+tech_code : T1081
+eval_phase : Credential Access
+eval_step : 15.B.1

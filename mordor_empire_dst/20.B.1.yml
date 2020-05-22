@@ -1,0 +1,6 @@
+search_doc_a : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "1"}}, {"match": {"process_name": "whoami.exe"}}, {"match": {"file_description": "whoami - displays logged on user information"}}]}}}
+tactic : Discovery
+technique : System Owner/User Discovery
+tech_code : T1033
+eval_phase : Execution of Persistence
+eval_step : 20.B.1

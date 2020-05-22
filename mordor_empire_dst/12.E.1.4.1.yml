@@ -1,0 +1,6 @@
+search_doc_c : {"query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase": {"param3": "Last 5 Files Opened"}}]}}}}}
+tactic : Discovery
+technique : File and Directory Discovery
+tech_code : T1083
+eval_phase : Initial Discovery
+eval_step : 12.E.1.4.1

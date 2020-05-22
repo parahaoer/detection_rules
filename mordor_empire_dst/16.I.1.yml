@@ -1,0 +1,8 @@
+search_doc_a : {"size": 10000, "query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase": {"event_id": "800"}}, {"match_phrase": {"param3": "name=\\\"Command\\\"; value=\\\"C:\\\\WINDOWS\\\\system32\\\\sc.exe `\\\\`\\\\HFDC01 create AdobeUpdater binPath= \\\"cmd.exe /c `\\\\`\\\"C:\\\\Users\\\\pgustavo\\\\AppData\\\\Roaming\\\\Adobe\\\\Flash Player\\\\autoupdate.vbs`\\\\`\\\" \\\" DisplayName= \\\"Adobe Flash Updater\\\" start= auto\\\""}}]}}}}}
+search_doc_b : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4103"}}, {"match_phrase": {"powershell.param.value": "C:\\\\WINDOWS\\\\system32\\\\sc.exe `\\\\`\\\\HFDC01 create AdobeUpdater binPath= \\\"cmd.exe /c `\\\\`\\\"C:\\\\Users\\\\pgustavo\\\\AppData\\\\Roaming\\\\Adobe\\\\Flash Player\\\\autoupdate.vbs`\\\\`\\\" \\\" DisplayName= \\\"Adobe Flash Updater\\\" start= auto"}}]}}}
+search_doc_c : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4688"}}, {"match_phrase": {"process_command_line": "*\\\\\\\\sc.exe\\\" \\\\\\\\HFDC01 create"}}]}}}
+tactic : Privilege Escalation
+technique : New Service
+tech_code : T1050
+eval_phase : Lateral Movement
+eval_step : 16.I.1

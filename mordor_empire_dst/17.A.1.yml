@@ -1,0 +1,6 @@
+search_doc_c : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "1"}}, {"match_phrase": {"process_command_line": "reg.exe\" query \"hkey_local_machine\\system\\currentcontrolset\\control\\terminal server\""}}]}}}
+tactic : Discovery
+technique : System Service Discovery
+tech_code : T1007
+eval_phase : Persistence
+eval_step : 17.A.1

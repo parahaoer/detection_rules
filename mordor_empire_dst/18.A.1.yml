@@ -1,0 +1,7 @@
+search_doc_a : {"size": 10000, "query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase": {"event_id": "800"}}, {"match_phrase": {"param3": "name=\"Command\"; value=\"Get-Childitem -Path FileSystem::\\\\HFDC01\\IT\\\""}}]}}}}}
+search_doc_b : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4103"}}, {"match_phrase": {"powershell.command.name": "Get-Childitem"}}]}}}
+tactic : Discovery
+technique : File and Directory Discovery
+tech_code : T1083
+eval_phase : Collection
+eval_step : 18.A.1

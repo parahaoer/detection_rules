@@ -1,0 +1,6 @@
+search_doc_c : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "1"}}, {"match_phrase": {"process_command_line": "*\\\\icacls.exe\" *\\magnify.exe /grant SYSTEM:F"}}]}}}
+tactic : Defense Evasion
+technique : File Permissions Modification
+tech_code : T1222
+eval_phase : Persistence
+eval_step : 17.B.2

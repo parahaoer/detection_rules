@@ -1,0 +1,8 @@
+search_doc_a : {"size": 10000, "query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase": {"event_id": "800"}}, {"match_phrase": {"param3": "name=\\\"Command\\\"; value=\\\"netstat -ano\\\""}}]}}}}}
+search_doc_b : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4103"}}, {"match_phrase": {"powershell.param.value": "netstat -ano"}}]}}}
+search_doc_c : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4688"}}, {"match_phrase": {"process_command_line": "*\\\\\\\\NETSTAT.EXE\\\" -ano"}}]}}}
+tactic : Discovery
+technique : System Network Connections Discovery
+tech_code : T1049
+eval_phase : Discovery for Lateral Movement
+eval_step : 13.B.2

@@ -1,0 +1,8 @@
+search_doc_a : {"size": 10000, "query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase": {"event_id": "800"}}, {"match_phrase": {"param3": "name=\\\"Command\\\"; value=\\\"net use /delete `\\\\`\\\\HFDC01\\\\ADMIN$\\\""}}]}}}}}
+search_doc_b : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4103"}}, {"match_phrase": {"powershell.param.value": "net use /delete `\\\\`\\\\HFDC01\\\\ADMIN$"}}]}}}
+search_doc_c : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4688"}}, {"match_phrase": {"process_command_line": "*\\\\\\\\net.exe\\\" use /delete \\\\\\\\HFDC01\\\\ADMIN$"}}]}}}
+tactic : Defense Evasion
+technique : Network Share Connection Removal
+tech_code : T1126
+eval_phase : Lateral Movement
+eval_step : 16.C.1

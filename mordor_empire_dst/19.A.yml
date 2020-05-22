@@ -1,0 +1,8 @@
+search_doc_a : {"size": 10000, "query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase": {"event_id": "800"}}, {"match_phrase": {"param3": "ParameterBinding(Set-Content): name=\"Path\"; value=\"recycler.exe\""}}]}}}}}
+search_doc_b : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4103"}}, {"match_phrase": {"powershell.command.name": "Set-Content"}}]}}}
+search_doc_c : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "11"}}, {"match_phrase": {"file_name": "recycler.exe"}}]}}}
+tactic : Defense Evasion
+technique : Remote File Copy
+tech_code : T1105
+eval_phase : Exfiltration
+eval_step : 19.A

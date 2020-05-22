@@ -1,0 +1,8 @@
+search_doc_a : {"size": 10000, "query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase": {"event_id": "800"}}, {"match_phrase": {"param3": "name=\\\"Command\\\"; value=\\\"reg query HKEY_LOCAL_MACHINE\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Policies\\\\System\\\\ /v EnableLUA\\\""}}]}}}}}
+search_doc_b : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4103"}}, {"match_phrase": {"powershell.param.value": "reg query HKEY_LOCAL_MACHINE\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Policies\\\\System\\\\ /v EnableLUA"}}]}}}
+search_doc_c : {"size": 10000, "query": {"bool": {"must": [{"match": {"event_id": "4688"}}, {"match_phrase": {"process_command_line": "*\\\\\\\\reg.exe\\\" query"}}]}}}
+tactic : Discovery
+technique : Query Registry
+tech_code : T1012
+eval_phase : Discovery for Lateral Movement
+eval_step : 13.C.1
