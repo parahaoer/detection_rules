@@ -18,7 +18,7 @@ def hash(search_doc_list, tactic, technique, tech_code, eval_phase, eval_step):
         doc_str = json.dumps(doc_dict)
         hash_str += doc_str
     hash_str += tactic+ technique+ tech_code+ eval_phase+ eval_step
-    print(hash_str)
+    
     md5 = hashlib.md5()
     md5.update(hash_str.encode('UTF-8'))
     return md5.hexdigest()
@@ -97,7 +97,9 @@ def exec_rule(item):
     eval_phase = item[4]
     eval_step = item[5]
     es = Elasticsearch(HELK_IP + ':9200', timeout=30)
-
+    
+    count = 0
+    
     rule_count = len(search_doc_list)
 
     if( rule_count == 3):
@@ -116,8 +118,6 @@ def exec_rule(item):
         list_a.sort(key=cmp_to_key(cmp_datetime))
         list_b.sort(key=cmp_to_key(cmp_datetime))
         list_c.sort(key=cmp_to_key(cmp_datetime))
-
-        count = 0
 
         for a_doc in list_a:
             for b_doc in list_b:
@@ -143,8 +143,6 @@ def exec_rule(item):
         # 对list_a、list_b、list_c 列表分别按照时间先后排序
         list_a.sort(key=cmp_to_key(cmp_datetime))
         list_b.sort(key=cmp_to_key(cmp_datetime))
-
-        count = 0
 
         for a_doc in list_a:
             for b_doc in list_b:
